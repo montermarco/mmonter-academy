@@ -1,8 +1,8 @@
-import { ArrowRight, Check, Users, MessageCircle } from "lucide-react";
+import { ArrowRight, Check, Users, MessageCircle, Flame, Tag } from "lucide-react";
 
 export function PricingCTA() {
   const whatsappUrl =
-    "https://wa.me/5215586777778?text=Hola%20Marco,%20quiero%20reservar%20mi%20lugar%20para%20el%20Cohorte%20LangGraph%20con%20TypeScript";
+    "https://wa.me/5215586777778?text=Hola%20Marco,%20quiero%20aprovechar%20el%20descuento%20Early%20Bird%20($4,999%20MXN)%20para%20el%20Cohorte%20LangGraph%20con%20TypeScript";
 
   return (
     <section id="pricing" className="py-20 border-t border-zinc-800/80 bg-transparent relative">
@@ -23,9 +23,26 @@ export function PricingCTA() {
           </p>
 
           {/* Pricing Card */}
-          <div className="mt-12 rounded-2xl border border-zinc-700/80 bg-zinc-900/50 backdrop-blur-xs p-8 sm:p-12 shadow-2xl text-left relative overflow-hidden max-w-2xl mx-auto">
+          <div className="mt-12 rounded-2xl border border-emerald-500/30 bg-zinc-900/60 backdrop-blur-xs p-8 sm:p-12 shadow-2xl text-left relative overflow-hidden max-w-2xl mx-auto ring-1 ring-emerald-500/20">
+            
+            {/* Early Bird Promo Banner */}
+            <div className="mb-6 rounded-xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/80 via-zinc-900/90 to-emerald-950/80 p-4 relative overflow-hidden shadow-lg">
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="flex items-center gap-2 text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">
+                  <Flame className="h-4 w-4 text-amber-400 animate-bounce" />
+                  <span>Descuento Early Bird — 30% OFF</span>
+                </div>
+                <span className="text-[11px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
+                  Primeros 5 Suscriptores
+                </span>
+              </div>
+              <p className="text-xs text-zinc-300 mt-2 font-sans">
+                Aprovecha la tarifa especial de <strong className="text-white">$4,999 MXN</strong> (sobre el precio regular de $7,199 MXN) para los primeros 5 inscritos en la lista de reserva.
+              </p>
+            </div>
+
             {/* Spot Counter Bar */}
-            <div className="mb-8 p-4 rounded-xl border border-emerald-900/50 bg-emerald-950/30">
+            <div className="mb-8 p-4 rounded-xl border border-zinc-800 bg-zinc-900/80">
               <div className="flex items-center justify-between text-xs font-mono mb-2">
                 <span className="text-emerald-400 font-semibold flex items-center gap-1.5">
                   <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -39,26 +56,48 @@ export function PricingCTA() {
                   style={{ width: "73%" }}
                 />
               </div>
-              <p className="text-[11px] font-mono text-zinc-400 mt-2 text-right">
-                Solo restan <span className="text-emerald-400 font-bold">4 cupos disponibles</span>
-              </p>
+              <div className="flex items-center justify-between text-[11px] font-mono text-zinc-400 mt-2">
+                <span className="text-amber-400 font-semibold flex items-center gap-1">
+                  <Tag className="h-3 w-3" /> Cupos Early Bird ($4,999 MXN) disponibles
+                </span>
+                <span className="text-emerald-400 font-bold">4 cupos restantes</span>
+              </div>
             </div>
 
             {/* Course Title & Price */}
-            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between border-b border-zinc-800/80 pb-6 mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-zinc-800/80 pb-6 mb-6 gap-4">
               <div>
-                <span className="font-mono text-xs text-zinc-400 uppercase">
+                <span className="font-mono text-xs text-zinc-400 uppercase tracking-wide">
                   Acceso Total al Cohorte
                 </span>
                 <h3 className="text-2xl font-bold text-zinc-100 mt-1">
                   LangGraph con TypeScript
                 </h3>
               </div>
-              <div className="mt-4 sm:mt-0 text-left sm:text-right">
-                <span className="text-3xl font-extrabold text-zinc-100 font-mono">
-                  $399 USD
+              <div className="text-left sm:text-right">
+                {/* Regular Price (More Visible) */}
+                <div className="flex items-center gap-2 sm:justify-end mb-1">
+                  <span className="text-xs font-mono text-zinc-400 uppercase">Precio regular:</span>
+                  <span className="text-base font-bold font-mono text-zinc-200 line-through decoration-rose-500 decoration-2">
+                    $7,199 MXN
+                  </span>
+                </div>
+
+                {/* Promo Price */}
+                <div className="flex items-baseline gap-1.5 sm:justify-end">
+                  <span className="text-xs font-mono text-emerald-400 font-bold uppercase">Early Bird:</span>
+                  <span className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-mono tracking-tight">
+                    $4,999
+                  </span>
+                  <span className="text-sm font-bold text-emerald-400 font-mono">
+                    MXN
+                  </span>
+                </div>
+
+                <span className="block text-xs font-mono text-emerald-400/90 font-medium mt-1">
+                  Ahorras $2,200 MXN (30% OFF)
                 </span>
-                <span className="block text-xs font-mono text-zinc-400">
+                <span className="block text-[11px] font-mono text-zinc-400 mt-0.5">
                   Pago único // Acceso de por vida
                 </span>
               </div>
@@ -89,9 +128,9 @@ export function PricingCTA() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-zinc-100 px-6 py-4 text-sm font-semibold text-zinc-950 shadow-xl hover:bg-white hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-400 px-6 py-4 text-sm font-bold text-zinc-950 shadow-xl hover:bg-emerald-300 hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] transition-all"
               >
-                Inscribirme al Cohorte
+                Inscribirme por $4,999 MXN
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a
@@ -106,7 +145,7 @@ export function PricingCTA() {
             </div>
 
             <p className="mt-4 text-center font-mono text-xs text-zinc-500">
-              ¿Dudas sobre facturación o pago en moneda local? Contacta por WhatsApp.
+              ¿Dudas sobre facturación, transferencias SPEI o tarjeta? Contacta por WhatsApp.
             </p>
           </div>
         </div>

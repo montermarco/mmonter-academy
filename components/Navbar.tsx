@@ -16,22 +16,21 @@ export function Navbar() {
         {/* Studio Branding */}
         <a
           href="#"
-          className="flex items-center gap-2.5 group transition-opacity hover:opacity-90"
+          className="flex items-center gap-3 group transition-opacity hover:opacity-90"
         >
-          <div className="flex h-8 w-8 items-center justify-center shadow-inner group-hover:border-zinc-500 transition-colors overflow-hidden p-1">
+          <div className="flex h-10 w-10 items-center justify-center transition-colors overflow-hidden p-0.5">
             <Image
               src="/mmonter_logo_clear.png"
               alt="MMonter Studio Logo"
-              sizes="24px"
-              width={24}
-              height={24}
+              sizes="36px"
+              width={36}
+              height={36}
               className="h-full w-full object-contain"
             />
           </div>
           <div className="flex flex-col">
-            <span className="font-mono text-sm font-semibold tracking-tight text-zinc-100 flex items-center gap-1.5">
-              MMonter<span className="text-zinc-600"></span>{" "}
-              <span className="text-zinc-400">Academy</span>
+            <span className="font-mono text-base font-bold tracking-tight text-zinc-100 flex items-center gap-1.5">
+              MMonter <span className="text-zinc-400 font-normal">Academy</span>
             </span>
           </div>
         </a>

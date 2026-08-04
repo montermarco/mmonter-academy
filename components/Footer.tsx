@@ -6,18 +6,18 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Studio Branding */}
-          <div className="flex items-center gap-2.5">
-            <div className="flex h-7 w-7 items-center justify-center p-1 overflow-hidden">
+          <div className="flex items-center gap-3">
+            <div className="flex h-9 w-9 items-center justify-center p-0.5 overflow-hidden">
               <Image
                 src="/mmonter_logo_clear.png"
                 alt="MMonter Studio Logo"
-                width={20}
-                height={20}
+                width={32}
+                height={32}
                 className="h-full w-full object-contain"
               />
             </div>
-            <span className="font-mono text-xs font-semibold text-zinc-300">
-              MMonter<span className="text-zinc-600"></span> Academy
+            <span className="font-mono text-sm font-bold text-zinc-200">
+              MMonter <span className="text-zinc-400 font-normal">Academy</span>
             </span>
           </div>
 
