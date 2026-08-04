@@ -1,6 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import { ArrowRight, Check, Users, MessageCircle, Flame, Tag } from "lucide-react";
+import { RegistrationModal } from "./RegistrationModal";
 
 export function PricingCTA() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const whatsappUrl =
     "https://wa.me/5215586777778?text=Hola%20Marco,%20quiero%20aprovechar%20el%20descuento%20Early%20Bird%20($4,999%20MXN)%20para%20el%20Cohorte%20LangGraph%20con%20TypeScript";
 
@@ -124,15 +130,14 @@ export function PricingCTA() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-400 px-6 py-4 text-sm font-bold text-zinc-950 shadow-xl hover:bg-emerald-300 hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] transition-all"
+              <button
+                type="button"
+                onClick={() => setIsModalOpen(true)}
+                className="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-400 px-6 py-4 text-sm font-bold text-zinc-950 shadow-xl hover:bg-emerald-300 hover:shadow-[0_0_25px_rgba(52,211,153,0.4)] transition-all cursor-pointer"
               >
                 Inscribirme por $4,999 MXN
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </button>
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -150,6 +155,12 @@ export function PricingCTA() {
           </div>
         </div>
       </div>
+
+      {/* Registration Modal Dialog */}
+      <RegistrationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </section>
   );
 }

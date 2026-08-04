@@ -20,6 +20,7 @@ export function Instructor() {
                   <Image
                     src="/profile_pic.png"
                     alt="Marco Monter"
+                    sizes=""
                     fill
                     className="object-cover"
                     priority
